@@ -1,0 +1,4 @@
+# 学习状态文件（不纳入版本管理）
+.study/state.json
+.study/errors.md
+.study/questions.md
