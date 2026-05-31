@@ -1,45 +1,45 @@
 # relive-to-learn
 
-**不是向学习者灌输知识，而是让学习者重演人类知识的发现、发明与对话过程。**
+**Don't teach knowledge — let learners relive its discovery, invention, and dialogue.**
 
-传统教学从结论开始——打开课本，第一章是定义。但知识的诞生，从来不是为了"被学习"，而是为了解决一个当时无法回避的困境。
+Traditional teaching starts from conclusions — open a textbook, chapter one is definitions. But knowledge was never born to be "learned." It was born to solve a dilemma that could no longer be avoided.
 
-这个 Claude Code Skill 让学习者回到那个困境的现场，成为必须做出抉择的人。
+This Claude Code Skill puts the learner back at the scene of that dilemma, as the person who must make the choice.
 
-## 四种教学模式
+## Four Teaching Modes
 
-| 模式 | 对象 | 剧本原型 |
-|------|------|----------|
-| **发现者** | 理工理论 | 科学家发现自然秘密 |
-| **工程师** | 技术工具栈 | 发明家解决工程痛点 |
-| **对话者** | 文科论题 | 进入千年未竟的辩论 |
-| **深度潜入者** | 经典专著 | 进入作者的心灵世界 |
+| Mode | Domain | Archetype |
+|------|--------|-----------|
+| **Discoverer** | Math & science | Scientist uncovering nature's secrets |
+| **Engineer** | Tech stacks | Inventor solving engineering pain |
+| **Dialoguer** | Humanities debates | Entering a millennia-old conversation |
+| **Deep Diver** | Classic works | Entering an author's mind |
 
-## 快速开始
+## Quick Start
 
 ```
-/study [你想学什么]
+/study [what you want to learn]
 ```
 
-Skill 自动诊断学科属性，路由到对应模式，从历史困境切入，用苏格拉底式对话引导你完成整个学习历程。
+The skill auto-detects the discipline, routes to the right mode, begins from a historical dilemma, and guides you through the entire learning journey with Socratic dialogue.
 
-## 核心理念
+## Core Principles
 
-1. **起点是困境，不是定义** —— 从一封信、一个悖论、一个工程痛点开始
-2. **默认你什么都不知道** —— 遇到术语先翻译再询问
-3. **你自己做出抉择** —— Skill 是助产士，不是答案提供者
-4. **所有产物先征得同意** —— 演示模型、知识卡片、总结报告，生成前先问你
-5. **学习成果固化为知识库** —— Obsidian 双链笔记 + Git 版本控制
+1. **Start from a dilemma, not a definition** — begin with a letter, a paradox, an engineering pain, or a raw text
+2. **Assume the learner knows nothing** — every unfamiliar term is translated before being introduced
+3. **The learner makes the choices** — the skill is a midwife, not an answer key
+4. **Ask before producing** — demos, knowledge cards, reports — always ask "want me to?"
+5. **Crystallize learning into a knowledge base** — Obsidian-linked notes + Git version control
 
-## 安装
+## Installation
 
-全局安装到 `~/.claude/skills/study/`：
+Global install at `~/.claude/skills/study/`:
 
 ```bash
 cp SKILL.md ~/.claude/skills/study/SKILL.md
 cp -r references/ ~/.claude/skills/study/references/
 ```
 
-## 许可
+## License
 
 MIT
