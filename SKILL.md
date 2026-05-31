@@ -26,11 +26,25 @@ description: Use when the user invokes /study or asks to learn a skill/technolog
 ### 首次启动（无 state.json）
 
 1. `git init`（若尚未初始化）
-2. 创建目录结构：
+2. 创建 Obsidian vault 目录结构：
 
 ```bash
-mkdir -p .study notes
+mkdir -p .study \
+  00-总览仪表盘 \
+  10-理论学习 \
+  20-工具栈 \
+  30-文科论题 \
+  40-经典专著 \
+  50-演示模型
 ```
+
+  各文件夹与四种模式的对应关系：
+  - `10-理论学习` → 发现者模式（理工科知识卡片）
+  - `20-工具栈` → 工程师模式（技术栈笔记 + 代码）
+  - `30-文科论题` → 对话者模式（先贤辩论记录）
+  - `40-经典专著` → 深度潜入者模式（原文 + 注释 + 个人回应）
+  - `50-演示模型` → 理工科演示代码归档
+  - `00-总览仪表盘` → 用户手动汇总学习历程
 
 3. 写入 `.gitignore`：
 
@@ -48,8 +62,9 @@ mkdir -p .study notes
 
 1. 读取 `state.json` 恢复上下文（topic、mode、phase、current_node 等）
 2. 读取 `errors.md` 加载错题历史
-3. 告知用户上次进度
-4. 自然继续对话
+3. 检查 vault 目录结构是否完整（旧版可能只有 `notes/`），缺则补建
+4. 告知用户上次进度
+5. 自然继续对话
 
 ---
 
