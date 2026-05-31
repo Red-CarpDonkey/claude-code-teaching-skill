@@ -55,8 +55,8 @@
 {
   "stage": 1,
   "initial_position": "用户在阶段二给出的初始立场",
-  "encountered_sages": ["边沁", "康德"],
-  "debate_rounds": {"边沁": 3, "康德": 2},
+  "encountered_sages": ["[先贤A]", "[先贤B]"],
+  "debate_rounds": {"[先贤A]": N, "[先贤B]": N},
   "final_position": "用户在阶段六给出的最终立场",
   "thought_history_position": null
 }

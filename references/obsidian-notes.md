@@ -25,8 +25,8 @@ Obsidian Vault/
 tags: [学科标签, 发现者模式]
 difficulty: 初|中|高
 mode: discoverer
-history_period: "1735年"
-scientist: "欧拉"
+history_period: "[年代]"
+scientist: "[科学家名]"
 related: [[前置概念]], [[后续分支]]
 ---
 
