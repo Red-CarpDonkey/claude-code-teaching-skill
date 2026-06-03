@@ -157,7 +157,7 @@ mkdir -p .study \
 
 以下内容**不输出到 CLI**，而是写入当前 `[板书]-实时笔记.md`：
 - LaTeX 公式（块级或行内）
-- mermaid 图表
+- mermaid 图表（**所有图表必须使用 mermaid，禁止 ASCII/Unicode 画图**。关系图用 `graph`、树形结构用 `graph TD`、时间线用 `timeline`、对比用 `quadrantChart`、流程用 `flowchart`、思维导图用 `mindmap`）
 - 超过 3 行的推导过程
 - 超过 5 行的代码块
 - 超过 2 句的先贤原文引用
