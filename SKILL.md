@@ -207,9 +207,9 @@ mkdir -p .study \
 
 ### 拆分操作
 
-1. 从 `[板书]-实时笔记.md` 中**剪切**该分支点相关的内容
-2. 生成 `[知识点]-[名称].md`，写入内容 + frontmatter（含 `previous`/`next`/`branch_of`）
-3. 原位置替换为 `→ 已拆分：[[知识点-名称]]`
+1. 使用 Write 工具创建 `[知识点]-[名称].md`，写入完整内容 + frontmatter（含 `previous`/`next`/`branch_of`）
+2. 使用 Edit 工具在 `[板书]-实时笔记.md` 中对应内容的**开头处**插入一行：`→ 详见：[[知识点-名称]]`
+3. **板书原文保留不删除**。板书是完整的学习记录，知识卡片是结构化归档
 4. 新卡片的 `previous` 设为 `state.json` 中 `vault.last_card_file`
 5. 若 `last_card_file` 存在，回填其 `next` 字段为当前新卡片
 6. 更新 `state.json`：`split_cards` 追加记录，`vault.last_card_file` 设为当前卡片
