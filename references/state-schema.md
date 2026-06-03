@@ -7,6 +7,16 @@
   "topic": "用户当前学习的主题",
   "mode": "discoverer | engineer | dialoguer | deep_diver",
   "phase": "diagnosis | teaching",
+  "vault": {
+    "mode_folder": "10-理论学习",
+    "topic_folder": "[模式文件夹]/[主题名]",
+    "blackboard_file": "[主题名]/[板书]-实时笔记.md",
+    "index_file": "00-总览仪表盘/索引.md",
+    "last_card_file": "上一个拆分的卡片路径"
+  },
+  "split_cards": [
+    {"file": "[知识点]-[名称].md", "title": "[名称]", "created_at": "..."}
+  ],
   "current_node": "当前正在进行的教学节点名",
   "completed_nodes": [
     {"name": "节点名", "completed_at": "2026-05-28"}
@@ -81,3 +91,27 @@
 旧 state.json（topic/type/phase）到新格式的迁移映射：
 - `type: "tool"` → `mode: "engineer"`，`type: "theory"` → `mode: "discoverer"`
 - 首次启动时自动检测并升级
+
+## vault 追踪字段说明
+
+### vault 对象
+
+| 字段 | 说明 |
+|------|------|
+| `mode_folder` | 当前模式对应的顶层文件夹（10-理论学习/20-工具栈/30-文科论题/40-经典专著） |
+| `topic_folder` | 当前主题的子文件夹完整路径 |
+| `blackboard_file` | 当前板书文件路径，每次回复追加写入 |
+| `index_file` | 索引文件路径 |
+| `last_card_file` | 最近一张拆分出的卡片路径，用于设置下一张的 `previous` 链接 |
+
+### split_cards 数组
+
+每次分支拆分时追加一条记录，用于追踪学习链。
+
+```json
+{
+  "file": "[知识点]-欧拉回路.md",
+  "title": "欧拉回路",
+  "created_at": "2026-06-03T12:30:00"
+}
+```
