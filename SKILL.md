@@ -152,12 +152,13 @@ mkdir -p .study \
 - 确认/反馈（"对，这就是关键"）
 - 模式识别问题和确认
 - 费曼检验提问
+- **涉及公式时转自然语言**：CLI 无法渲染 LaTeX。说"根号2"而非"$\sqrt{2}$"，说"p平方等于2乘以q平方"而非"$p^2 = 2q^2$"，说"度数对2取余等于1"而非"$\deg(v) \equiv 1 \pmod{2}$"
 
 ### 教学内容写到 Obsidian
 
 以下内容**不输出到 CLI**，而是写入当前 `[板书]-实时笔记.md`：
 - LaTeX 公式（块级或行内）
-- mermaid 图表（**所有图表必须使用 mermaid，禁止 ASCII/Unicode 画图**。关系图用 `graph`、树形结构用 `graph TD`、时间线用 `timeline`、对比用 `quadrantChart`、流程用 `flowchart`、思维导图用 `mindmap`）
+- mermaid 图表（**所有图表必须使用 mermaid，禁止 ASCII/Unicode 画图**。默认使用 `graph TD` 竖版布局。仅关系/网络类使用 `graph LR`。时间线用 `timeline`、对比用 `quadrantChart`、流程用 `flowchart TD`、思维导图用 `mindmap`）
 - 超过 3 行的推导过程
 - 超过 5 行的代码块
 - 超过 2 句的先贤原文引用
@@ -176,6 +177,18 @@ mkdir -p .study \
 - LaTeX 用 `$...$` 或 `$$...$$`
 - mermaid 用 ` ```mermaid`
 - 代码块带语言标识
+
+### 写入后审查
+
+每次 Write 板书文件后，立即用 Read 检查写入内容，确认以下格式正确：
+
+1. **mermaid 图优先竖版**：默认用 `graph TD`，仅关系/网络类用 `graph LR`
+2. **表格格式**：markdown 表格 `|` 分隔行必须连续，中间不能有空行或孤立的 `|` 字符。表头分割行 `|---|---|` 必须完整
+3. **LaTeX 公式**：`$$` 块中不能有空行，`$$` 必须紧贴公式内容（不能有多余空行）
+4. **双链语法**：`[[文件名]]` 格式正确
+5. **无 ASCII 残留**：无 `├──`、`└──`、`═══` 等字符
+
+发现格式问题立即用 Edit 修复，修复后再 Read 验证一次。
 
 ---
 
