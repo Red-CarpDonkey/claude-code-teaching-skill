@@ -87,6 +87,65 @@ Open the working directory in Obsidian to see your complete knowledge graph.
 
 ---
 
+## Blackboard Example
+
+After `/study discrete math`, open the blackboard file in Obsidian:
+
+```markdown
+# Discrete Math · Blackboard
+
+## Stage 1: The Telegram
+
+**Time:** Spring, 1736
+**Place:** Königsberg, Prussia
+**You are:** Leonhard Euler, 29
+
+The city spans the Pregel River. Seven bridges connect four regions:
+
+```mermaid
+graph TB
+    A["North Bank"] --- B["Kneiphof Island"]
+    A --- B
+    A --- C["Lomse Island"]
+    B --- C
+    B --- D["South Bank"]
+    B --- D
+    C --- D
+```
+
+> *Dear Mr. Euler, can one walk across all seven bridges exactly once and return home?*
+
+## Stage 5: Co-Derivation
+
+### Step 3: Odd-Degree Vertices
+
+$$
+\deg(v) \equiv 1 \pmod{2} \quad\Rightarrow\quad \text{must be start or end point}
+$$
+
+### Theorem Statement
+
+> **Euler's Theorem (1736)**
+> A connected graph has an Eulerian path **iff** it has exactly **0 or 2** odd-degree vertices.
+
+## Discrete Math Landscape
+
+```mermaid
+graph TD
+    DM["Discrete Math"] --> GT["Graph Theory"]
+    DM --> CO["Combinatorics"]
+    DM --> LO["Logic & Proofs"]
+    GT --> GT1["Euler Path/Circuit ✅ Done"]
+    GT --> GT2["Hamiltonian Path"]
+    LO --> LO1["Propositional Logic"]
+    LO --> LO4["Mathematical Induction"]
+```
+```
+
+> Real learning session output. CLI shows brief dialogue; Obsidian renders mermaid diagrams, LaTeX, and structured knowledge.
+
+---
+
 ## Core Principles
 
 1. **Start from a dilemma, not a definition** — begin with a letter, a paradox, an engineering pain, or a raw text
