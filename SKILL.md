@@ -360,9 +360,11 @@ git add -A && git commit -m "[模式] 知识点 - 进度描述"
 3. 阶段间门控：用户可暂停、跳过或回退到前一阶段
 4. 当前阶段写入 `state.json` 对应模式字段的 `stage`
 
-### 合规检查 Agent
+### 合规检查 Agent（两级）
 
-每完成一个阶段或每 10 次教学回复后，用 Agent 工具调度 `references/compliance-checker.md`。若返回 FAIL，立即按建议修复后再继续教学。
+**每次输出后**：调度 `references/post-output-checker.md`——轻量检查，只查 4 条硬规则（板书写入、CLI LaTeX 残留、ASCII 图、替用户思考）。发现即修。
+
+**每阶段/每 10 轮**：调度 `references/compliance-checker.md`——深度检查，覆盖全部 5 项（板书写入、模式框架、知识卡片、铁律三、格式规范）。FAIL 即修再继续。
 
 调度时，prompt 中传入当前工作目录路径和板书文件路径。
 
