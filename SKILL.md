@@ -360,6 +360,12 @@ git add -A && git commit -m "[模式] 知识点 - 进度描述"
 3. 阶段间门控：用户可暂停、跳过或回退到前一阶段
 4. 当前阶段写入 `state.json` 对应模式字段的 `stage`
 
+### 合规检查 Agent
+
+每完成一个阶段或每 10 次教学回复后，用 Agent 工具调度 `references/compliance-checker.md`。若返回 FAIL，立即按建议修复后再继续教学。
+
+调度时，prompt 中传入当前工作目录路径和板书文件路径。
+
 ### 演示模型（理工科模式）
 
 当教学中需要可视化时，遵循 `references/demo-models.md` 的规则：
