@@ -1,4 +1,4 @@
-# relive-to-learn
+# Claude Code Teaching Skill
 
 **不是向学习者灌输知识，而是让学习者重演人类知识的发现、发明与对话过程。**
 

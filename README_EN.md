@@ -1,4 +1,4 @@
-# relive-to-learn
+# Claude Code Teaching Skill
 
 **Don't teach knowledge — let learners relive its discovery, invention, and dialogue.**
 
