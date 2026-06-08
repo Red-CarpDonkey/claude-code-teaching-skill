@@ -26,9 +26,19 @@
   ],
   "question_counts": {"知识点": 提问次数},
   "cycle_count": 0,
+  "deferred_questions": [
+    {
+      "question": "用户原始问题",
+      "deferred_from_meta_stage": "II",
+      "target_meta_stage": "III",
+      "timestamp": "2026-06-08T...",
+      "status": "pending | answered"
+    }
+  ],
   "discoverer": { ... },
   "engineer": { ... },
   "dialoguer": { ... },
+  "observer": { ... },
   "deep_diver": { ... }
 }
 ```
@@ -42,7 +52,8 @@
   "chosen_path": "用户在阶段四选择的路径",
   "preknowledge_gaps": ["已识别但用户选择不展开的前置概念"],
   "proof_status": "not_started | in_progress | complete",
-  "ripple_branch_chosen": "用户在阶段六选择的涟漪分支方向"
+  "ripple_branch_chosen": "用户在阶段六选择的涟漪分支方向",
+  "textbook": {"title": "教材名", "current_chapter": "Ch3", "chapters_completed": ["Ch1", "Ch2"]}
 }
 ```
 
@@ -55,7 +66,8 @@
   "milestones_completed": ["已完成的代码里程碑名称"],
   "current_code_path": "当前项目代码的相对路径",
   "refactor_applied": false,
-  "extension_chosen": "用户在阶段六选择的拓展选题"
+  "extension_chosen": "用户在阶段六选择的拓展选题",
+  "textbook": {"title": "教材名", "current_chapter": "Ch3", "chapters_completed": ["Ch1", "Ch2"]}
 }
 ```
 
@@ -68,7 +80,22 @@
   "encountered_sages": ["[先贤A]", "[先贤B]"],
   "debate_rounds": {"[先贤A]": N, "[先贤B]": N},
   "final_position": "用户在阶段六给出的最终立场",
-  "thought_history_position": null
+  "thought_history_position": null,
+  "textbook": {"title": "教材名", "current_chapter": "Ch3", "chapters_completed": ["Ch1", "Ch2"]}
+}
+```
+
+## 观察者模式字段 (observer)
+
+```json
+{
+  "stage": 1,
+  "phenomenon": "用户在阶段一面对的具体异常现象",
+  "user_variables": ["用户识别的变量列表"],
+  "user_hypothesis": "用户在阶段三提出的因果假设",
+  "competing_theory": "阶段四引入的竞争理论名称",
+  "model_application_result": "阶段五模型应用到新现象的结果",
+  "textbook": {"title": "教材名", "current_chapter": "Ch3", "chapters_completed": ["Ch1", "Ch2"]}
 }
 ```
 
@@ -82,7 +109,8 @@
   "user_confusions": ["素读阶段暴露的困惑列表"],
   "annotations_chosen": ["选择的注疏解释"],
   "dialogues_generated": 0,
-  "creative_work": "用户完成的内化作品路径或描述"
+  "creative_work": "用户完成的内化作品路径或描述",
+  "textbook": {"title": "经典名/注疏名", "current_chapter": "篇三", "chapters_completed": ["篇一", "篇二"]}
 }
 ```
 
