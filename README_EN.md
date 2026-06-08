@@ -8,13 +8,32 @@ This Claude Code Skill puts the learner back at the scene of that dilemma, as th
 
 ---
 
-## Four Teaching Modes
+## Theoretical Foundation: The Five Meta-Learning Stages
+
+All teaching is grounded in a universal cognitive grammar — the five logical stages through which any human mind moves from ignorance to mastery:
+
+| Stage | Logic | Core Output |
+|-------|-------|-------------|
+| **I Genesis** | Cognitive dissonance | Problem awareness |
+| **II Ontology** | Reductionism | Definitions, concepts, boundaries |
+| **III Mechanism** | Structural functionalism | Mechanisms, algorithms, derivations |
+| **IV Dialectic** | Critical realism | Boundary conditions, costs, limitations |
+| **V Synthesis** | Holism | Knowledge network, transfer capability |
+
+Each stage constrains what the teacher is allowed to do: Stage I only creates gaps (no definitions), Stage III requires the learner to derive (no spoon-feeding), Stage IV must present alternatives without favoring any.
+
+---
+
+## Five Teaching Modes
+
+Each mode is a domain-specific instantiation of the five meta-stages:
 
 | Mode | Domain | Archetype | Core Question |
 |------|--------|-----------|---------------|
 | **Discoverer** | Math & science | Scientist uncovering nature's secrets | Why is the world this way? |
 | **Engineer** | Tech stacks | Inventor solving engineering pain | How to do it more effectively? |
 | **Dialoguer** | Humanities debates | Entering a millennia-old conversation | How should we understand and choose? |
+| **Observer** | Social sciences (empirical) | Social scientist explaining phenomena | Why does human society work this way? |
 | **Deep Diver** | Classic works | Entering an author's mind | What is this author really saying? |
 
 ---
@@ -30,13 +49,48 @@ In any directory:
 The skill auto-detects the discipline and routes to the right mode. Examples:
 
 ```
-/study discrete math    → auto-detects as Discoverer mode
-/study C++              → auto-detects as Engineer mode
-/study philosophy of law → auto-detects as Dialoguer mode
-/study Zhuangzi          → auto-detects as Deep Diver mode
+/study discrete math      → auto-detects as Discoverer mode
+/study C++                → auto-detects as Engineer mode
+/study philosophy of law  → auto-detects as Dialoguer mode
+/study macroeconomics     → auto-detects as Observer mode
+/study Zhuangzi           → auto-detects as Deep Diver mode
 ```
 
 You can also manually specify: "use Engineer mode for graph theory".
+
+---
+
+## Key Features
+
+### Textbook as Roadmap
+
+All five modes support selecting a textbook as the learning roadmap. The chapter list drives the five meta-stages — each chapter completes a full deep learning cycle.
+
+### Concept Introduction: Five-Step Template (Engineer Mode)
+
+```
+What is it (1 line) → Usage template (ALL possible cases) → Examples (2-3) → Runnable code → Pain point revealed last
+```
+
+The pain point comes last — the learner first experiences the concept hands-on, then looks back and recognizes what problem it elegantly solves.
+
+### Knowledge Point Detection
+
+Cards are no longer triggered by "which stage you're in." Instead, a knowledge point is recognized when the learner (1) passes the Feynman test (explains the essence in one sentence) AND (2) expresses a connection to prior knowledge. Both signals must be the learner's own words.
+
+### Three-Agent Supervision
+
+After every teaching interaction, three independent supervision agents run sequentially to prevent attention mechanism failures:
+
+| Agent | Core Question |
+|-------|---------------|
+| Format Supervisor | Is it correct? |
+| Rule Supervisor | Is it following the rules? |
+| Content Reviewer | Is it thorough enough? |
+
+### Question Interruption Protocol
+
+When the learner asks a mid-session question, it's classified (A/B/C/D) and gated by the current meta-stage. Questions about content from later stages are deferred and revisited when the learner reaches that stage — no spoilers.
 
 ---
 
@@ -46,9 +100,9 @@ You can also manually specify: "use Engineer mode for graph theory".
 
 The CLI terminal is for **dialogue only** — questions, answers, brief guidance. All teaching content (derivations, formulas, diagrams, code, arguments) is written in real-time to an Obsidian vault blackboard file. Open the file in Obsidian to see beautifully rendered LaTeX formulas and mermaid diagrams.
 
-### Knowledge Cards and Branching
+### Knowledge Cards and Cognitive Network
 
-Whenever you make a meaningful "branch choice" during learning (choosing a derivation path, a design approach, engaging with a sage, selecting an annotation interpretation), the skill cuts the relevant content from the blackboard and auto-generates a knowledge card. Each card has bidirectional links, forming your personal knowledge network — viewable in Obsidian's graph view.
+When the learner passes the Feynman test and expresses a connection to prior knowledge, a knowledge card is generated. Each card records four elements: one-sentence definition, connection edge, invocation evidence, and current cognitive depth. Cards use the learner's own words as the core, with bidirectional links forming a personal knowledge network — viewable in Obsidian's graph view.
 
 ### Resuming a Previous Session
 
@@ -63,24 +117,19 @@ When tokens run out or you need a new session:
 
 ### Obsidian Vault Structure
 
-The following directories and files are auto-created:
-
 ```
 working-directory/
 ├── 00-总览仪表盘/           # Dashboard
-│   └── 索引.md               # Entry index linking all topics
 ├── 10-理论学习/              # Discoverer mode output
-│   └── [topic]/
-│       ├── [板书]-实时笔记.md  # Current blackboard (unsplit content)
-│       └── [知识点]-[name].md # Split knowledge cards
 ├── 20-工具栈/                # Engineer mode output
 ├── 30-文科论题/              # Dialoguer mode output
+├── 35-社会观察/              # Observer mode output
 ├── 40-经典专著/              # Deep Diver mode output
 ├── 50-演示模型/              # Demo code
 └── .study/                   # Learning state (gitignored)
-    ├── state.json            # Progress tracking
-    ├── errors.md             # Error log
-    └── questions.md          # Question log
+    ├── state.json
+    ├── errors.md
+    └── questions.md
 ```
 
 Open the working directory in Obsidian to see your complete knowledge graph.
@@ -89,13 +138,11 @@ Open the working directory in Obsidian to see your complete knowledge graph.
 
 ## Blackboard Example
 
-After `/study discrete math`, open the blackboard in Obsidian to see mermaid diagrams, LaTeX, and knowledge trees rendered beautifully:
+After `/study discrete math`, open the blackboard in Obsidian:
 
 > **# Discrete Math · Blackboard**
 >
-> **Stage 1: The Telegram** — Spring 1736, Königsberg. You are Euler. A letter arrives from the townspeople.
->
-> Seven bridges span four regions of the city:
+> **Stage 1: The Telegram** — Spring 1736, Königsberg. You are Euler. A letter arrives.
 >
 > ~~~mermaid
 > graph TB
@@ -115,29 +162,14 @@ After `/study discrete math`, open the blackboard in Obsidian to see mermaid dia
 > $$
 >
 > **Theorem:** A connected graph has an Eulerian path iff its number of odd-degree vertices is 0 or 2.
->
-> **Discrete Math Landscape:**
->
-> ~~~mermaid
-> graph TD
->     DM["Discrete Math"] --> GT["Graph Theory"]
->     DM --> CO["Combinatorics"]
->     DM --> LO["Logic & Proofs"]
->     GT --> GT1["Euler Path/Circuit ✅ Done"]
->     GT --> GT2["Hamiltonian Path"]
->     LO --> LO1["Propositional Logic"]
->     LO --> LO4["Mathematical Induction"]
-> ~~~
-
-> Real learning session. CLI shows brief dialogue; Obsidian renders complete mermaid diagrams, LaTeX, and structured knowledge.
 
 ---
 
 ## Core Principles
 
-1. **Start from a dilemma, not a definition** — begin with a letter, a paradox, an engineering pain, or a raw text
-2. **Assume the learner knows nothing** — every unfamiliar term is translated before being introduced
-3. **The learner makes the choices** — the skill is a midwife, not an answer key
+1. **Start from a dilemma, not a definition** — begin with a letter, a paradox, an engineering pain, an anomalous phenomenon
+2. **Assume the learner knows nothing** — every unfamiliar term is translated before being introduced. Every new concept follows "what → purpose → template → simpler version"
+3. **The learner makes the choices** — the skill is a midwife, not an answer key. Never names what the learner discovered for them
 4. **Ask before producing** — demos, knowledge cards, reports — always ask "want me to?"
 5. **Crystallize learning into a knowledge base** — Obsidian-linked notes + Git version control
 
